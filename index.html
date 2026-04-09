@@ -97,7 +97,7 @@
     }
   </style>
 
-  <script src="https://efp-data.s3.amazonaws.com/packages/main/expofp.js" crossorigin="anonymous"></script>
+  <script src="https://duncanmcarthurhall.expofp.com/packages/main/expofp.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="floorplan-wrap">
@@ -135,6 +135,18 @@
       statusEl.style.display = "none";
     }
 
+    function zoomFromSearchResult(result) {
+      const item = result?.item;
+      if (!item) return false;
+
+      if (item.name) {
+        fp.zoomTo({ booths: [{ name: item.name }] }, { padding: 40 });
+        return true;
+      }
+
+      return false;
+    }
+
     async function runSearch() {
       const term = inputEl.value.trim();
       if (!term || !fp) {
@@ -150,9 +162,13 @@
           return;
         }
 
-        showStatus(`Found ${results.length} match(es) for "${term}".`);
+        const didZoom = zoomFromSearchResult(results[0]);
+        showStatus(
+          didZoom
+            ? `Showing best match for "${term}".`
+            : `Found ${results.length} match(es) for "${term}".`
+        );
 
-        // Leave zooming out for now until we confirm the result object structure.
         console.log("ExpoFP search results:", results);
       } catch (err) {
         console.error(err);
@@ -176,7 +192,20 @@
       element: document.querySelector("#floorplan"),
       eventId: "duncanmcarthurhall",
       dataUrl: "https://duncanmcarthurhall.expofp.com/data/",
-      allowConsent: false
+      allowConsent: false,
+      noOverlay: true,
+      onInit: function(instance) {
+        fp = instance;
+
+        if (fp.setVisibility) {
+          fp.setVisibility({
+            controls: true,
+            levels: true,
+            header: false,
+            overlay: false
+          });
+        }
+      }
     });
   </script>
 </body>
