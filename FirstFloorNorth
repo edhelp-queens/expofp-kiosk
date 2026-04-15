@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Duncan McArthur Hall Map - Student Street</title>
+  <title>Duncan McArthur Hall Map - FirstFloorNorth</title>
 
   <style>
     html, body {
@@ -54,9 +54,10 @@
     <div class="hero"></div>
 
     <div class="map-wrap">
-     <iframe
-  src="https://duncanmcarthurhall.expofp.com/?k=2&centerxy=3260.577392578125%2C1574.793701171875&z=Level1&bearing=270&zoom=0.76">
-</iframe>
+      <iframe
+        src="https://duncanmcarthurhall.expofp.com/?kiosk=1&allowConsent=false&centerxy=2800.577392578125%2C1574.793701171875&z=Level1&bearing=270&zoom=0.76"
+        allow="clipboard-read; clipboard-write">
+      </iframe>
     </div>
   </div>
 </body>
