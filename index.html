@@ -11,13 +11,26 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
       font-family: Arial, sans-serif;
     }
 
-    .map-wrap {
-      width: 100vw;
+    .page {
+      display: flex;
+      flex-direction: column;
       height: 100vh;
+    }
+
+    .hero {
+      height: 180px; /* 👈 fixed height works better than vh on phones */
+      background-image: url("DunMac.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000;
+    }
+
+    .map-wrap {
+      flex: 1;
       position: relative;
     }
 
@@ -29,15 +42,30 @@
       height: 100%;
       border: 0;
     }
+
+    /* Optional: slightly smaller header on very small screens */
+    @media (max-width: 600px) {
+      .hero {
+        height: 120px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="map-wrap">
-   <iframe
-  src="https://duncanmcarthurhall.expofp.com/?kiosk=1&allowConsent=false"
-  allow="clipboard-read; clipboard-write">
-</iframe>
+  <div class="page">
+    
+    <!-- Top image -->
+    <div class="hero"></div>
+
+    <!-- Map -->
+    <div class="map-wrap">
+      <iframe
+        src="https://duncanmcarthurhall.expofp.com/?allowConsent=false"
+        allow="clipboard-read; clipboard-write">
+      </iframe>
+    </div>
+
   </div>
 </body>
 </html>
