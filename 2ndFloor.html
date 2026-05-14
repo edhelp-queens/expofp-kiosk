@@ -46,6 +46,22 @@
       height: 100%;
       border: 0;
     }
+
+    .clock {
+      position: fixed;
+      bottom: 12px;
+      right: 12px;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 8px;
+      padding: 4px 6px;
+      backdrop-filter: blur(3px);
+    }
+
+    .clock iframe {
+      display: block;
+      border: 0;
+    }
   </style>
 </head>
 
@@ -54,11 +70,20 @@
     <div class="hero"></div>
 
     <div class="map-wrap">
-     <iframe
-  src="https://duncanmcarthurhall.expofp.com/?k=3&centerxy=2750.380859375%2C1930.9798583984375&z=Level2&bearing=270&zoom=0.9"
-  allow="clipboard-read; clipboard-write">
-</iframe>
+      <iframe
+        src="https://duncanmcarthurhall.expofp.com/?k=3&centerxy=2750.380859375%2C1930.9798583984375&z=Level2&bearing=270&zoom=0.9"
+        allow="clipboard-read; clipboard-write">
+      </iframe>
     </div>
   </div>
+
+  <div class="clock">
+    <iframe
+      src="https://free.timeanddate.com/clock/iaey6zez/n1183/pd2/tt0/tw0/tm1/ts1/tb4"
+      width="87"
+      height="35">
+    </iframe>
+  </div>
+
 </body>
 </html>
