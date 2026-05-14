@@ -57,30 +57,28 @@
 
       z-index: 9999;
 
-      width: 205px;
-      height: 64px;
+      width: 235px;
+      height: 78px;
 
       overflow: hidden;
 
       border-radius: 10px;
 
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(2px);
+      background: rgba(0,0,0,0.28);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .clock iframe {
-      position: absolute;
-
-      top: 2px;
-      left: 8px;
-
-      width: 190px;
-      height: 58px;
+      width: 215px;
+      height: 70px;
 
       border: 0;
 
-      transform: scale(1.15);
-      transform-origin: top left;
+      margin-top: 4px;
+      margin-left: 2px;
     }
   </style>
 </head>
@@ -99,8 +97,10 @@
 
     <div class="clock">
       <iframe
-        src="https://free.timeanddate.com/clock/iaey6zez/n1183/pd2/tt0/tw0/tm1/ts1/tb4"
-        frameborder="0">
+        src="https://free.timeanddate.com/clock/iaey6zez/n1183/fs16/pd2/tt0/tw0/tm1/ts1/tb4"
+        frameborder="0"
+        width="99"
+        height="39">
       </iframe>
     </div>
 
