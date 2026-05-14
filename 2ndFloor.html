@@ -21,6 +21,7 @@
       flex-direction: column;
       width: 100vw;
       height: 100vh;
+      position: relative;
     }
 
     .hero {
@@ -30,6 +31,7 @@
       background-position: center bottom;
       background-repeat: no-repeat;
       background-color: #000;
+      position: relative;
     }
 
     .map-wrap {
@@ -48,40 +50,40 @@
     }
 
     .clock {
-      position: fixed;
+      position: absolute;
 
-      bottom: 10px;
-      right: 35px;
+      top: 22vh;
+      right: 18px;
 
       z-index: 9999;
 
-      width: 120px;
-      height: 38px;
+      width: 95px;
+      height: 30px;
 
       overflow: hidden;
 
-      background: #000;
       border-radius: 6px;
+
+      background: transparent;
     }
 
     .clock iframe {
       position: absolute;
 
-      top: -7px;
+      top: -6px;
       left: -8px;
 
-      width: 140px;
-      height: 60px;
+      width: 130px;
+      height: 55px;
 
       border: 0;
-
-      opacity: 0.98;
     }
   </style>
 </head>
 
 <body>
   <div class="page">
+
     <div class="hero"></div>
 
     <div class="map-wrap">
@@ -90,14 +92,14 @@
         allow="clipboard-read; clipboard-write">
       </iframe>
     </div>
-  </div>
 
-  <div class="clock">
-    <iframe
-      src="https://free.timeanddate.com/clock/iaey6zez/n1183/pd2/tt0/tw0/tm1/ts1/tb4"
-      frameborder="0">
-    </iframe>
-  </div>
+    <div class="clock">
+      <iframe
+        src="https://free.timeanddate.com/clock/iaey6zez/n1183/pd2/tt0/tw0/tm1/ts1/tb4"
+        frameborder="0">
+      </iframe>
+    </div>
 
+  </div>
 </body>
 </html>
