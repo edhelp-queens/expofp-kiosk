@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Duncan McArthur Hall Map</title>
+  <title>Duncan McArthur Hall Map - 2nd Floor</title>
 
   <style>
     html, body {
@@ -12,28 +12,30 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+      background: #000;
       font-family: Arial, sans-serif;
     }
 
     .page {
       display: flex;
       flex-direction: column;
+      width: 100vw;
       height: 100vh;
     }
 
     .hero {
-      height: 200px;
+      flex: 0 0 30vh;
       background-image: url("DunMac.png");
-      background-size: cover;
-      background-position: center;
+      background-size: contain;
+      background-position: center bottom;
       background-repeat: no-repeat;
       background-color: #000;
     }
 
     .map-wrap {
-      flex: 1;
-      position: relative;
+      flex: 1 1 auto;
       min-height: 0;
+      position: relative;
     }
 
     .map-wrap iframe {
@@ -45,10 +47,20 @@
       border: 0;
     }
 
-    @media (max-width: 600px) {
-      .hero {
-        height: 140px;
-      }
+    .clock {
+      position: fixed;
+      bottom: 12px;
+      right: 12px;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 8px;
+      padding: 4px 6px;
+      backdrop-filter: blur(3px);
+    }
+
+    .clock iframe {
+      display: block;
+      border: 0;
     }
   </style>
 </head>
@@ -59,10 +71,19 @@
 
     <div class="map-wrap">
       <iframe
-        src="https://duncanmcarthurhall.expofp.com/?kiosk=1&allowConsent=false"
+        src="https://duncanmcarthurhall.expofp.com/?k=3&centerxy=2750.380859375%2C1930.9798583984375&z=Level2&bearing=270&zoom=0.9"
         allow="clipboard-read; clipboard-write">
       </iframe>
     </div>
   </div>
+
+  <div class="clock">
+    <iframe
+      src="https://free.timeanddate.com/clock/iaey6zez/n1183/pd2/tt0/tw0/tm1/ts1/tb4"
+      width="87"
+      height="35">
+    </iframe>
+  </div>
+
 </body>
 </html>
