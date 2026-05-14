@@ -52,31 +52,35 @@
     .clock {
       position: absolute;
 
-      top: calc(30vh - 38px);
-      right: 18px;
+      top: calc(30vh - 62px);
+      right: 24px;
 
       z-index: 9999;
 
-      width: 98px;
-      height: 34px;
+      width: 205px;
+      height: 64px;
 
       overflow: hidden;
 
-      border-radius: 6px;
+      border-radius: 10px;
 
-      background: transparent;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(2px);
     }
 
     .clock iframe {
       position: absolute;
 
-      top: -3px;
-      left: -8px;
+      top: 2px;
+      left: 8px;
 
-      width: 130px;
-      height: 55px;
+      width: 190px;
+      height: 58px;
 
       border: 0;
+
+      transform: scale(1.15);
+      transform-origin: top left;
     }
   </style>
 </head>
